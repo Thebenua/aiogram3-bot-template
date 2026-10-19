@@ -42,3 +42,19 @@
 
 Для воспроизводимого старта используйте Python 3.11 и отдельное виртуальное окружение. Обновление закреплённых версий требует отдельной проверки совместимости.
 
+## Структура репозитория
+
+```text
+aiogram3-bot-template/
+├── config/
+│   └── config.py        # Settings и загрузка окружения
+├── handlers/
+│   └── common.py        # Router и команда /start
+├── main.py             # Bot, Dispatcher, logging, polling
+├── requirements.txt    # Закреплённые зависимости
+├── docker-compose.yml  # Заготовка bot + PostgreSQL + Redis
+└── README.md
+```
+
+Файл `.env` создаётся локально. Каталогов сервисов, моделей БД и миграций в текущем каркасе ещё нет.
+
