@@ -104,3 +104,21 @@ python -m pip install -r requirements.txt
 
 Если PowerShell блокирует активацию, можно вызывать интерпретатор напрямую: `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`.
 
+## Настройка окружения
+
+Создайте в корне `.env`:
+
+```dotenv
+BOT_TOKEN=replace_with_your_botfather_token
+DATABASE_URL=postgresql+asyncpg://benua_user:replace_with_local_password@localhost:5432/bot_metadata
+REDIS_URL=redis://localhost:6379/0
+```
+
+| Переменная | Как используется сейчас |
+| --- | --- |
+| `BOT_TOKEN` | Передаётся в `Bot`; нужен настоящий токен |
+| `DATABASE_URL` | Обязательна в `Settings`, но подключения к БД ещё нет |
+| `REDIS_URL` | Обязательна в `Settings`, но Redis storage ещё не подключён |
+
+Адреса БД и Redis в примере — настройки для последующего подключения. Пароль должен совпадать с настройками вашей БД. Добавление других ключей в `.env` согласуйте с моделью `Settings`: неизвестные поля могут вызвать ошибку валидации.
+
