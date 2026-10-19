@@ -76,3 +76,31 @@ Telegram → polling → Dispatcher → common.router → cmd_start → отве
 
 Токен даёт доступ к управлению ботом. Не вставляйте его в исходный код, сообщения об ошибках или публичные примеры.
 
+## Установка
+
+```bash
+git clone https://github.com/Thebenua/aiogram3-bot-template.git
+cd aiogram3-bot-template
+python -m venv .venv
+```
+
+Активируйте окружение в своей оболочке:
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+```bash
+# Linux / macOS
+source .venv/bin/activate
+```
+
+Затем установите зависимости:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Если PowerShell блокирует активацию, можно вызывать интерпретатор напрямую: `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`.
+
