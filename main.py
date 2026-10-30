@@ -14,7 +14,10 @@ async def main():
     dp = Dispatcher()
     dp.include_router(common.router)
     logging.info("Starting bot orchestrator...")
-    await dp.start_polling(bot)
+    try:
+        await dp.start_polling(bot)
+    finally:
+        await bot.session.close()
 
 
 if __name__ == "__main__":
