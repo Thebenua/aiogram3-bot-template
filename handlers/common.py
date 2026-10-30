@@ -10,3 +10,8 @@ async def cmd_start(message: types.Message):
 @router.message(Command("help"))
 async def cmd_help(message: types.Message):
     await message.answer("Доступные команды: /start — начать, /help — помощь.")
+
+
+@router.message()
+async def fallback(message: types.Message):
+    await message.answer("Пока я понимаю команды /start и /help.")
